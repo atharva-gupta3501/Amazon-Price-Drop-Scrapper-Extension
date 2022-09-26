@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<style>
+    /*set border to the form*/
+      
+    form {
+        border: 3px solid #f1f1f1;
+    }
+    /*assign full width inputs*/
+      
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    /*set a style for the buttons*/
+    h3 {text-align: center;}
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    /* set a hover effect for the button*/
+      
+    button:hover {
+        opacity: 0.8;
+    }
+    /*set extra style for the cancel button*/
+      
+    .signupbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #94d2bd;
+    }
+    /*centre the display image inside the container*/
+      
+    .container {
+        padding: 16px;
+    }
+    /*set the forgot password text*/
+      
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    /*set styles for span and cancel button on small screens*/
+      
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .signupbtn {
+            width: 100%;
+        }
+    }
+</style>
+  
+<body>
+  
+    <h3>Sign Up</h3>
+    <form action="/popup.js" id = "signup">
+  
+        <div class="container" ng-controller="signupController">
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter email" name="email" ng-model="email" required>
+
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="new_user" ng-model="new_user" required>
+  
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="new_psw" ng-model="new_psw" required>
+  
+            <button type="button" value="Register" ng-click="signupdetails(email, new_user, new_psw)">Register</button>
+        </div>
+    </form>
+  
+</body>
+  
+</html>

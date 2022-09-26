@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Amazon Price Change Notifier",
+    "version": "1.0.0",
+    "description": "Notifies you if the price of selected objects changes",
+    "icons": {
+      "128": "icon128.png",
+      "48": "icon48.png",
+      "16": "icon16.png"
+    },
+    "browser_action": {
+      "default_icon": "icon16.png",
+      "default_popup": "popup.html"
+    },
+    "permissions": ["tabs", "activeTab", "storage"],
+    "background": {
+      "scripts": ["jquery/dist/jquery.js", "background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.amazon.in/gp/cart*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
